@@ -2,12 +2,14 @@
 <html>
   <title>Transaction List</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="design.css">
   <script src="finance.js"></script>
   <body>
     <div class="input">
       <div class="transactionform">
-        Expenditure: $<input type="number" id="expenditure" min="0">
+        Expenditure ($):
+        <input type="number" id="expenditure" min="0">
       </div>
       <div class="addorsubtract">
         <button onclick="subtract()" class="material-icons">remove</button>
@@ -15,7 +17,8 @@
     </div>
     <div class="input">
       <div class="transactionform">
-        Income: $<input type="number" id="income" min="0">
+        Income ($):
+        <input type="number" id="income" min="0">
       </div>
       <div class="addorsubtract">
         <button onclick="add()" class="material-icons">add</button>
@@ -23,8 +26,8 @@
     </div>
 
     <div class="listoftrans">
+      List of Transactions:
       <ul id="items"></ul>
     </div>
-    <div id="total"></div>
+    <div id="total">Total: </div>
   </body>
-</html>
