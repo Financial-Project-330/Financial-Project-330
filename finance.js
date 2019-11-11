@@ -2,12 +2,12 @@ var total = 0;
 var items = [];
 
 function subtract() {
-  var expenditure = document.getElementById('expenditure');
+  var expenditure = -(document.getElementById('expenditure'));
   if (!isNaN(expenditure)) {
     document.getElementById('expenditure') = '';
-    total = total - expenditure;
+    total = total + expenditure;
     document.getElementById('total').value = total;
-    items.push(-expenditure);
+    items.push(expenditure);
     for (i=0; i<items.length; i++) {
       document.getElementById('items').innerHTML += '<li>' + items[i] + '</li>';
     }
@@ -20,7 +20,7 @@ function add() {
     document.getElementById('income') = '';
     total = total + income;
     document.getElementById('total').value = total;
-    items.push(+income);
+    items.push(income);
     for (i=0; i<items.length; i++) {
       document.getElementById('items').innerHTML += '<li>' + items[i] + '</li>';
     }
