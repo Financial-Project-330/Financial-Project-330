@@ -2,23 +2,23 @@ var total = 0;
 var items = [];
 
 function subtract() {
-  var expenditure = -Number((document.getElementById('expenditure')));
+  var expenditure = document.getElementById('expenditure');
   document.getElementById('expenditure') = '';
-  total = total + expenditure;
+  total = total - Number(expenditure);
   document.getElementById('total').value = total;
-  items.push(expenditure);
+  items.push(-Number(expenditure));
   for (i=0; i<items.length; i++) {
-    document.getElementById('items').innerHTML += '<li>' + items[i] + '</li>';
+    document.getElementById('items').innerHTML += '<li>' + '$' + items[i] + '</li>';
   }
 }
 
 function add() {
-  var income = Number(document.getElementById('income'));
+  var income = document.getElementById('income');
   document.getElementById('income') = '';
-  total = total + income;
+  total = total + Number(income);
   document.getElementById('total').value = total;
-  items.push(income);
+  items.push(Number(income));
   for (i=0; i<items.length; i++) {
-    document.getElementById('items').innerHTML += '<li>' + items[i] + '</li>';
+    document.getElementById('items').innerHTML += '<li>' + '$' + items[i] + '</li>';
   }
 }
