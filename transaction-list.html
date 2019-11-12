@@ -12,7 +12,7 @@
         <input type="number" id="expenditure" min="0">
       </div>
       <div class="addorsubtract">
-        <button onclick="subtract()" class="material-icons">remove</button>
+        <button onclick="subtract();compare_total_to_goal();" class="material-icons">remove</button>
       </div>
     </div>
     <div class="input">
@@ -21,13 +21,23 @@
         <input type="number" id="income" min="0">
       </div>
       <div class="addorsubtract">
-        <button onclick="add()" class="material-icons">add</button>
+        <button onclick="add();compare_total_to_goal();" class="material-icons">add</button>
       </div>
     </div>
-
+    <div class="input"> <!--new -->
+      <div class="transactionform"> <!--new -->
+        Your Goal Balance ($):
+        <input type="number" id="goalinput" min="0"> <!--new -->
+      </div> <!--new -->
+      <div class="addorsubtract"> <!--new -->
+        <button onclick="compare_total_to_goal()">OK</button> <!--new -->
+      </div> <!--new -->
+    </div> <!--new -->
+    <div id="goal">Goal Balance: </div> <!-- new -->
     <div class="listoftrans">
       List of Transactions:
       <ul id="items"></ul>
     </div>
-    <div id="total">Total: </div>
+    <div id="total">Balance: </div>
+
   </body>
