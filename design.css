@@ -3,11 +3,54 @@
 	src: url(https://fonts.gstatic.com/s/barlowsemicondensed/v5/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqqKkkogw.woff2) format('woff2');
 }
 
+body{
+  background-image: url("images/iphoneOL.jpg");
+  background-repeat: no-repeat;
+}
+
+#screen {
+  height: 530px;
+  width: 300px;
+  margin: 105px 23px;
+}
+
+.head-bar {
+  position: relative;
+  top: 10px;
+  left: 5px;
+  text-align: center;
+  background-color: #99ccff;
+  width: 290px;
+  height: 45px;
+  color: black;
+  
+}
+
+.input-bar{
+  position: relative;
+  width: 100px;
+}
+
 .input {
+  position: relative;
+  top: 20px;
+  left: 7px;
   display: inline-grid;
-  grid-template-columns: 270px 270px;
+  grid-template-columns: 245px 270px;
   grid-template-rows: 20px 20px;
 }
+
+.goal-balance{
+  position: relative;
+  top: 50px;
+  left: 5px;
+  text-align: left;
+  background-color: #99ccff;
+  width: 290px;
+  height: 25px;
+  color: black;
+}
+
 
 .transactionform {
   display: inline-grid;
@@ -16,12 +59,36 @@
 }
 
 .listoftrans {
+  position: relative;
+  top: 50px;
+  left: 5px;
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
+  width: 286px;
+}
+
+.icon{
+  position: fixed;
+  left: 37px;
+  top: 605px;
+  background-color: #99ccff;
+  font-size: 10px;
+  text-align: right;
+  width: 290px;
+  height: 25px;
+  display: inline-grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: 20px;
 }
 
 #total {
+  position: relative;
+  top: 54px;
+  left: 5px;
   margin-top: -2px;
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
+  width: 286px;
 }
+
+
