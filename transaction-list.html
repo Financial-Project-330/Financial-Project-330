@@ -6,10 +6,14 @@
   <link rel="stylesheet" href="design.css">
   <script src="finance.js"></script>
   <body>
+    <div id = "screen">
+      <div class="head-bar">
+                    <h1> Balance </h1>
+            </div>
     <div class="input">
       <div class="transactionform">
         Expenditure ($):
-        <input type="number" id="expenditure" min="0">
+        <input class = "input-bar" type="number" id="expenditure" min="0">
       </div>
       <div class="addorsubtract">
         <button onclick="subtract();compare_total_to_goal();" class="material-icons">remove</button>
@@ -18,7 +22,7 @@
     <div class="input">
       <div class="transactionform">
         Income ($):
-        <input type="number" id="income" min="0">
+        <input class = "input-bar" type="number" id="income" min="0">
       </div>
       <div class="addorsubtract">
         <button onclick="add();compare_total_to_goal();" class="material-icons">add</button>
@@ -27,17 +31,34 @@
     <div class="input"> <!--new -->
       <div class="transactionform"> <!--new -->
         Your Goal Balance ($):
-        <input type="number" id="goalinput" min="0"> <!--new -->
+        <input class = "input-bar" type="number" id="goalinput" min="0"> <!--new -->
       </div> <!--new -->
       <div class="addorsubtract"> <!--new -->
         <button onclick="compare_total_to_goal()">OK</button> <!--new -->
       </div> <!--new -->
     </div> <!--new -->
-    <div id="goal">Goal Balance: </div> <!-- new -->
+    <div class="goal-balance" id="goal">
+      <h>Goal Balance: </h>
+    </div> <!-- new -->
     <div class="listoftrans">
       List of Transactions:
       <ul id="items"></ul>
     </div>
     <div id="total">Balance: </div>
-
+    <div class="icon">
+      <i class="material-icons">local_mall</i>
+      <i class="material-icons">restaurant</i>
+      <i class="material-icons">local_grocery_store</i>
+      <i class="material-icons">flight</i>
+      <i class="material-icons">hotel</i>
+<!--       <table>
+        <tr>
+          <td ><i class="material-icons">local_mall</i></td>
+          <td><i class="material-icons">restaurant</i></td>
+          <td ><i class="material-icons">local_grocery_store</i></td>
+          <td ><i class="material-icons">flight</i></td>
+        </tr>
+      </table> -->
+    </div>
+  </div>
   </body>
