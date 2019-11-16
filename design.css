@@ -4,14 +4,12 @@
 }
 
 body{
-  background-image: url("images/iphoneOL.jpg");
+/*  background-image: url("images/iphoneOL.jpg");*/
   background-repeat: no-repeat;
 }
 
 #screen {
-  height: 530px;
-  width: 300px;
-  margin: 105px 23px;
+
 }
 
 .head-bar {
@@ -20,7 +18,7 @@ body{
   left: 5px;
   text-align: center;
   background-color: #99ccff;
-  width: 290px;
+  width: 450px;
   height: 45px;
   color: black;
   
@@ -89,6 +87,26 @@ body{
   border-style: solid;
   border-width: 1px;
   width: 286px;
+}
+
+.subtitle{
+	position: relative;
+  	top: 10px;
+  	left: 5px;
+  	text-align: center;
+  	width: 450px;
+  	height: 20px;
+  	color: black;
+
+}
+.log-in-button{
+	position: relative;
+}
+
+.user-info{
+  display: inline-grid;
+  grid-template-columns: 110px 150px;
+  grid-template-rows: 20px;
 }
 
 
