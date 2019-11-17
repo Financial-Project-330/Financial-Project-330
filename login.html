@@ -3,11 +3,9 @@
   <title>login</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="design.css">
-  <script src="finance.js"></script>
   <body>
       <div class="head-bar">
-            <h1> Welcome to Financial Tracker </h1>
+        <h1> Welcome to Financial Tracker </h1>
       </div>
       <div class="subtitle">
             say no to paycheck-to-paycheck
@@ -21,17 +19,14 @@
       <div class = "input">
         <div class = "user-info">
           <h>Password:</h>
-          <input class = "input-bar" type="text" id="user-name">
+          <input class = "input-bar" type="text" id="pass-word">
         </div>
       </div>
       <div class="log-in-button">
-          <a href="transaction-list.html">
-              Log In
-          </a>
+          <button onclick="createacc()">Create Account</button>
      </div>
-     <div class="log-in-button">
-          <a href="transaction-list.html">
-              Create Account
-          </a>
+    <div class="log-in-button">
+          <button onclick="login()" class="materials-icons">Log In</button>
      </div>
   </body>
+</html>
