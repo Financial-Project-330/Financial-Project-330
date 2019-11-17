@@ -52,11 +52,6 @@ function add() {
   i++;
 }
 
-function modify_input()
-{
-
-}
-
 function compare_total_to_goal() {
   var goal = Number(document.getElementById('goalinput').value);
   if (goal <= 0) return; //new
@@ -64,4 +59,44 @@ function compare_total_to_goal() {
   document.getElementById('goal').innerHTML = 'Goal Balance: $' + goal;
   //if (goal != 0 && total >= goal) document.getElementById('goal').innerHTML += '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Goal reached!' + '&#128513;';
   if (goal != 0 && total >= goal) document.getElementById('goal').innerHTML += '<p>' + 'Goal reached!' + '&#128513;'+ '</p';
+}
+
+
+///FOR LOGIN PAGE
+var username = ["sky", "star", "sun"];
+var password = ["blue", "yellow", "red"];
+
+function login() {
+  var match = false;
+  var un = document.getElementById("user-name").value;
+  var pw = document.getElementById("pass-word").value;
+  for (var j = 0; j < username.length; j++) {
+    if (un == username[j]) {
+      match = true;
+      if (pw == password[j]) {
+        window.location.assign("https://www.google.com/");
+      }
+      else {
+        alert("incorrect password");
+      }
+    }
+  }
+  if (match == false) {
+    alert("incorrect username");
+  }
+}
+
+function createacc() {
+  var match = false;
+  var un = document.getElementById("user-name").value;
+  var pw = document.getElementById("pass-word").value;
+  for (var j = 0; j < username.length; j++) {
+    if (un == username[j]) {
+      match = true;
+      alert("choose different username");
+    }
+  }
+  if (match == false) {
+    window.location.assign("https://www.google.com/");
+  }
 }
