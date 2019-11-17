@@ -74,7 +74,7 @@ function login() {
     if (un == username[j]) {
       match = true;
       if (pw == password[j]) {
-        window.location.assign("https://www.google.com/");
+        window.location.assign("transaction-list.html");
       }
       else {
         alert("incorrect password");
@@ -97,6 +97,8 @@ function createacc() {
     }
   }
   if (match == false) {
-    window.location.assign("https://www.google.com/");
+    username.push(un);
+    password.push(pw);
+    window.location.assign("transaction-list.html");
   }
 }
