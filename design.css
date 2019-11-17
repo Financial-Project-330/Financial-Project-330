@@ -21,7 +21,7 @@ body{
   width: 450px;
   height: 45px;
   color: black;
-  
+
 }
 
 .input-bar{
@@ -33,20 +33,27 @@ body{
   position: relative;
   top: 20px;
   left: 7px;
-  display: inline-grid;
+	/* display: inline-grid; */
+	padding: 7px;
+  display: flex;
   grid-template-columns: 245px 270px;
   grid-template-rows: 20px 20px;
 }
 
 .goal-balance{
   position: relative;
+	/* padding-bottom: 20px; */
   top: 50px;
   left: 5px;
   text-align: left;
   background-color: #99ccff;
   width: 290px;
-  height: 25px;
+  height: 50px;
   color: black;
+}
+
+p {
+	margin: 0;
 }
 
 
@@ -101,6 +108,8 @@ body{
 }
 .log-in-button{
 	position: relative;
+	padding-top: 18px;
+	padding-left: 12px;
 }
 
 .user-info{
@@ -108,5 +117,3 @@ body{
   grid-template-columns: 110px 150px;
   grid-template-rows: 20px;
 }
-
-
