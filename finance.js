@@ -5,24 +5,14 @@ var smile_reward = '';
 
 function subtract() {
   var expenditure = Number(document.getElementById('expenditure').value);
-  if (expenditure <= 0) return; //new
-  //expenditure = Math.round(expenditure * 100) / 100; //new
-  //expenditure = Number(Math.round(expenditure+'e2')+'e-2');
-  if (total - expenditure < 0) { //new
-    alert("Balance is negative. Please add income to increase balance"); //new
-    return; //new
+  if (expenditure <= 0) return; 
+  if (total - expenditure < 0) { 
+    alert("Balance is negative. Please add income to increase balance"); 
   }
   document.getElementById('expenditure').value = '';
   total = total - expenditure;
   total = Math.round(total*100) / 100;
-  //if (total >= 0) {
   document.getElementById('total').innerHTML = 'Balance: $' + total;
-  //}
-  //else {
-    //document.getElementById('total').innerHTML = 'Balance: -$' + Math.abs(total);
-    //alert("Balance is negative. Please add income to increase balance"); //new
-    //return; //new
-  //}
   items.push(-expenditure);
   document.getElementById('items').innerHTML += '<li>' + '-$' + Math.abs(items[i]) + '</li>';
   i++;
@@ -30,34 +20,24 @@ function subtract() {
 
 function add() {
   var income = Number(document.getElementById('income').value);
-  if (income <= 0) return; //new
-  //income = Math.round(income * 100) / 100;
-  if (total + income < 0) { //new
-    alert("Balance is negative. Please add income to increase balance"); //new
-    return; //new
+  if (income <= 0) return; 
+  if (total + income < 0) { 
+    alert("Balance is negative. Please add income to increase balance"); 
   }
   document.getElementById('income').value = '';
   total = total + income;
   total = Math.round(total*100) / 100;
-  //if (total >= 0) {
   document.getElementById('total').innerHTML = 'Balance: $' + total;
-  //}
-  //else {
-    //document.getElementById('total').innerHTML = 'Balance: -$' + Math.abs(total);
-    //alert("Balance is negative. Please add income to increase balance"); //new
-    //return; //new
-  //}
   items.push(income);
-  document.getElementById('items').innerHTML += '<li>' + '+$' + items[i] + '</li>'; //changed $ to +$
+  document.getElementById('items').innerHTML += '<li>' + '+$' + Math.abs(items[i]) + '</li>'; 
   i++;
 }
 
 function compare_total_to_goal() {
   var goal = Number(document.getElementById('goalinput').value);
-  if (goal <= 0) return; //new
-  goal = Math.round(goal * 100) / 100; //new
+  if (goal <= 0) return; 
+  goal = Math.round(goal * 100) / 100; 
   document.getElementById('goal').innerHTML = 'Goal Balance: $' + goal;
-  //if (goal != 0 && total >= goal) document.getElementById('goal').innerHTML += '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Goal reached!' + '&#128513;';
   if (goal != 0 && total >= goal) document.getElementById('goal').innerHTML += '<p>' + 'Goal reached!' + '&#128513;'+ '</p';
 }
 
@@ -70,6 +50,10 @@ function login() {
   var match = false;
   var un = document.getElementById("user-name").value;
   var pw = document.getElementById("pass-word").value;
+  if (un == '' | pw == '') {
+    match = true;
+    alert("username and password can't be empty");
+  }
   for (var j = 0; j < username.length; j++) {
     if (un == username[j]) {
       match = true;
@@ -90,6 +74,10 @@ function createacc() {
   var match = false;
   var un = document.getElementById("user-name").value;
   var pw = document.getElementById("pass-word").value;
+  if (un == '' | pw == '') {
+    match = true;
+    alert("username and password can't be empty");
+  }
   for (var j = 0; j < username.length; j++) {
     if (un == username[j]) {
       match = true;

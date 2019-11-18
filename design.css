@@ -4,52 +4,96 @@
 }
 
 body{
-/*  background-image: url("images/iphoneOL.jpg");*/
   background-repeat: no-repeat;
+/*  background-color: #ffe6ff;*/
 }
 
-#screen {
-
+.back-button{
+  margin-top: 20px;
 }
+
 
 .head-bar {
   position: relative;
-  top: 10px;
   left: 5px;
+  top: 10px;
   text-align: center;
   background-color: #99ccff;
-  width: 450px;
-  height: 45px;
   color: black;
+  border-radius: 10px;
+  display: inline-grid;
+  grid-template-columns: 30px 1000px;
+  grid-template-rows: 60px;
 
+}
+
+.left-right{
+  position: relative;
+  display: inline-grid;
+  top: 5px;
+  left:100px;
+  padding: 5px;
+  display: flex;
+  grid-template-columns: 300px 500px;
+  grid-template-rows: auto;
+
+}
+
+.input {
+  position: relative;
+  display: inline-grid;
+  top: 20px;
+  grid-template-rows: 200px;
 }
 
 .input-bar{
   position: relative;
   width: 100px;
+  height: 15px;
 }
 
-.input {
+.transactionform {
+  display: inline-grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 25px 25px 100px;
+
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: lightpink;
+
+}
+
+.ok-button{
+  display: inline-grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 30px;
+
+}
+
+.right {
   position: relative;
+  display: inline-grid;
   top: 20px;
   left: 7px;
-	/* display: inline-grid; */
-	padding: 7px;
-  display: flex;
-  grid-template-columns: 245px 270px;
-  grid-template-rows: 20px 20px;
+  padding: 7px;
+  grid-template-rows: 50px 350px 150px;
+  grid-template-columns: 500px;
 }
 
 .goal-balance{
-  position: relative;
-	/* padding-bottom: 20px; */
-  top: 50px;
-  left: 5px;
   text-align: left;
   background-color: #99ccff;
-  width: 290px;
-  height: 50px;
+  height: 24px;
   color: black;
+  background-color: lightpink;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 p {
@@ -57,29 +101,27 @@ p {
 }
 
 
-.transactionform {
-  display: inline-grid;
-  grid-template-columns: 110px 150px;
-  grid-template-rows: 20px;
-}
-
 .listoftrans {
   position: relative;
-  top: 50px;
-  left: 5px;
   border-style: solid;
-  border-width: 1px;
-  width: 286px;
+  border-width: 5px;
+  border-color: white;
+  background-color: lightpink;
+  border-radius: 10px;
+  padding: 10px;
+  display:flex;
+
 }
 
 .icon{
   position: fixed;
   left: 37px;
-  top: 605px;
+  top: 800px;
+  position:relative;
+  top: 20px;
   background-color: #99ccff;
   font-size: 10px;
   text-align: right;
-  width: 290px;
   height: 25px;
   display: inline-grid;
   grid-template-columns: 50px 50px 50px 50px 50px;
@@ -87,33 +129,57 @@ p {
 }
 
 #total {
-  position: relative;
-  top: 54px;
-  left: 5px;
   margin-top: -2px;
   border-style: solid;
-  border-width: 1px;
-  width: 286px;
+  border-width: 5px;
+  border-color: white;
+  background-color: lightpink;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.subtitle{
-	position: relative;
-  	top: 10px;
-  	left: 5px;
-  	text-align: center;
-  	width: 450px;
-  	height: 20px;
-  	color: black;
+.login-header{
+  position: relative;
+  left: 300px;
+  top: 240px;
+  text-align: center;
+  height: 40px;
+  width: 500px;
+  color: black;
+  background-color: #99ccff;
+  border-color: white;
+  border-radius: 10px;
+}
+
+.login-screen{
+  position: relative;
+  top: 250px;
+  left: 300px;
+  text-align:center;
+  background-color: lightpink;
+  border-color: white;
+  border-radius: 10px;
+  display:inline-grid;
+  grid-template-rows: 50px 50px 50px;
+  grid-template-columns: 500px;
 
 }
-.log-in-button{
-	position: relative;
-	padding-top: 18px;
-	padding-left: 12px;
-}
+
 
 .user-info{
+  position: relative;
+  top: 10px;
+  left: 100px;
+  text-align: center;
   display: inline-grid;
-  grid-template-columns: 110px 150px;
-  grid-template-rows: 20px;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 25px;
 }
+
+
+.log-in-button{
+  position: relative;
+  left: 190px;
+  display: inline-grid;
+  grid-template-columns: 100px;
+  grid-template-rows: 20px 20px;
