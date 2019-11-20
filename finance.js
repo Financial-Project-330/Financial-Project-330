@@ -59,8 +59,17 @@ function login() {
   for (var j = 0; j < username.length; j++) {
     if (un == username[j]) {
       match = true;
-      if (pw == password[j]) {
-        window.location.assign("transaction-list.html");
+      //if (pw == password[j]) {
+      //  window.location.assign("transaction-list.html");
+      //}
+      if (pw == password[j] && pw=="blue") {
+        window.location.assign("user1-transaction-list.html");
+      }
+      else if (pw == password[j] && pw=="yellow") {
+        window.location.assign("user2-transaction-list.html");
+      }
+      else if (pw == password[j] && pw=="red") {
+        window.location.assign("user3-transaction-list.html");
       }
       else {
         alert("incorrect password");
@@ -91,4 +100,10 @@ function createacc() {
     password.push(pw);
     window.location.assign("transaction-list.html");
   }
+}
+
+function set_name() {
+  var name = document.getElementById("nameinput").value;
+  document.getElementById('name').innerHTML = "Name: " + name;
+  document.getElementById('nameinput').value = '';
 }

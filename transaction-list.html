@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="design.css">
   <script src="finance.js"></script>
-  <body>     
+  <body>
     <div class="head-bar">
       <div class = "back-button">
         <a href="login.html">
@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="transactionform">
           Income ($):
           <div class="ok-button">
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="transactionform">
           Your Goal Balance ($):
           <div class="ok-button">
@@ -60,6 +60,17 @@
         <div id="total">Balance: </div>
       </div>
 
+      <div class="profile">
+        <div class="name-bar" id="name">
+          Name: 
+        </div>
+          <div class="ok-button">
+            <input class="input-bar" type="text" id="nameinput">
+            <div class="addorsubtract">
+              <button onclick="set_name()">Update</button>
+          </div>
+        </div>
+      </div>
 <!--       <div class="icon">
         <i class="material-icons">local_mall</i>
         <i class="material-icons">restaurant</i>
