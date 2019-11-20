@@ -5,11 +5,12 @@ var smile_reward = '';
 
 function subtract() {
   var expenditure = Number(document.getElementById('expenditure').value);
-  if (expenditure <= 0) return; 
-  if (total - expenditure < 0) { 
-    alert("Balance is negative. Please add income to increase balance"); 
+  if (expenditure <= 0) return;
+  if (total - expenditure < 0) {
+    alert("Balance is negative. Please add income to increase balance");
   }
   document.getElementById('expenditure').value = '';
+  expenditure=Math.round(expenditure*100)/100;
   total = total - expenditure;
   total = Math.round(total*100) / 100;
   document.getElementById('total').innerHTML = 'Balance: $' + total;
@@ -20,23 +21,24 @@ function subtract() {
 
 function add() {
   var income = Number(document.getElementById('income').value);
-  if (income <= 0) return; 
-  if (total + income < 0) { 
-    alert("Balance is negative. Please add income to increase balance"); 
+  if (income <= 0) return;
+  if (total + income < 0) {
+    alert("Balance is negative. Please add income to increase balance");
   }
   document.getElementById('income').value = '';
+  income=Math.round(income*100)/100;
   total = total + income;
   total = Math.round(total*100) / 100;
   document.getElementById('total').innerHTML = 'Balance: $' + total;
   items.push(income);
-  document.getElementById('items').innerHTML += '<li>' + '+$' + Math.abs(items[i]) + '</li>'; 
+  document.getElementById('items').innerHTML += '<li>' + '+$' + Math.abs(items[i]) + '</li>';
   i++;
 }
 
 function compare_total_to_goal() {
   var goal = Number(document.getElementById('goalinput').value);
-  if (goal <= 0) return; 
-  goal = Math.round(goal * 100) / 100; 
+  if (goal <= 0) return;
+  goal = Math.round(goal * 100) / 100;
   document.getElementById('goal').innerHTML = 'Goal Balance: $' + goal;
   if (goal != 0 && total >= goal) document.getElementById('goal').innerHTML += '<p>' + 'Goal reached!' + '&#128513;'+ '</p';
 }
@@ -57,8 +59,17 @@ function login() {
   for (var j = 0; j < username.length; j++) {
     if (un == username[j]) {
       match = true;
-      if (pw == password[j]) {
-        window.location.assign("transaction-list.html");
+      //if (pw == password[j]) {
+      //  window.location.assign("transaction-list.html");
+      //}
+      if (pw == password[j] && pw=="blue") {
+        window.location.assign("user1-transaction-list.html");
+      }
+      else if (pw == password[j] && pw=="yellow") {
+        window.location.assign("user2-transaction-list.html");
+      }
+      else if (pw == password[j] && pw=="red") {
+        window.location.assign("user3-transaction-list.html");
       }
       else {
         alert("incorrect password");
@@ -89,4 +100,10 @@ function createacc() {
     password.push(pw);
     window.location.assign("transaction-list.html");
   }
+}
+
+function set_name() {
+  var name = document.getElementById("nameinput").value;
+  document.getElementById('name').innerHTML = "Name: " + name;
+  document.getElementById('nameinput').value = '';
 }
