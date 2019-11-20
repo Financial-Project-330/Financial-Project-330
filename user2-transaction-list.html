@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <title>Transaction List</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="design.css">
+  <script src="finance.js"></script>
+  <body>
+    <div class="head-bar">
+      <div class = "back-button">
+        <a href="login.html">
+          <img src="images/sign-out.svg", width="30", height="30"， alt="Log Out">
+        </a>
+      </div>
+      <h1> Balance </h1>
+    </div>
+    <div class = "left-right">
+      <div class="input">
+        <div class="transactionform">
+          Expenditure ($):
+          <div class="ok-button">
+            <input class = "input-bar" type="number" id="expenditure" min="0">
+            <div class="addorsubtract">
+              <button onclick="subtract();compare_total_to_goal();">
+                Add Spending
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="transactionform">
+          Income ($):
+          <div class="ok-button">
+            <input class = "input-bar" type="number" id="income" min="0">
+            <div class="addorsubtract">
+              <button onclick="add();compare_total_to_goal();">Add Income</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="transactionform">
+          Your Goal Balance ($):
+          <div class="ok-button">
+            <input class = "input-bar" type="number" id="goalinput" min="0">
+            <div class="addorsubtract">
+              <button onclick="compare_total_to_goal()">Set Goal</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class = "right">
+        <div class="goal-balance" id="goal">
+          <p>Goal Balance: $500</p>
+        </div>
+        <div class="listoftrans">
+          List of Transactions:
+          <ul id="items"></ul>
+        </div>
+        <div id="total">Balance: </div>
+      </div>
+
+      <div class="profile">
+        <div class="name-bar" id="name">
+          Name: Alan Turing
+        </div>
+          <div class="ok-button">
+            <input class="input-bar" type="text" id="nameinput">
+            <div class="addorsubtract">
+              <button onclick="set_name()">Update</button>
+          </div>
+        </div>
+      </div>
+
+<!--       <div class="icon">
+        <i class="material-icons">local_mall</i>
+        <i class="material-icons">restaurant</i>
+        <i class="material-icons">local_grocery_store</i>
+        <i class="material-icons">flight</i>
+        <i class="material-icons">hotel</i>
+      </div> -->
+    </div>
+  </body>
+</html>
