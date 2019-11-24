@@ -107,3 +107,57 @@ function set_name() {
   document.getElementById('name').innerHTML = "Name: " + name;
   document.getElementById('nameinput').value = '';
 }
+
+
+function drawLineChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Date', 'Balance'],
+  ['2019/10/31',  80],
+  ['2019/11/05',  -10],
+  ['2019/11/17',  60],
+  ['2019/11/20',  -20],
+  ['2019/11/24',  -40],
+  ['2019/11/30',  100],
+  ['2019/12/01',  80]
+  ]);
+
+  var options = {
+    title: 'Input and Expenditure Line Chart',
+    legend: { position: 'bottom' },
+    width: 500,
+    height: 400
+  };
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  chart.draw(data, options);
+}
+
+
+function drawPieChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Category', 'Spending'],
+    ['Food',     80],
+    ['Clothes',      40],
+    ['Travelling',  100],
+    ['Transportation', 30],
+    ['Grocery',    40]
+]);
+
+  var options = {
+    title: 'Expenditure Categories',
+    width: 500,
+    height: 400
+  };
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+  chart.draw(data, options);
+}
+
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawLineChart);
+google.charts.setOnLoadCallback(drawPieChart);
+
+

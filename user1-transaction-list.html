@@ -3,6 +3,7 @@
   <title>Transaction List</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="stylesheet" href="design.css">
   <script src="finance.js"></script>
   <body>
@@ -14,7 +15,8 @@
       </div>
       <h1> Balance </h1>
     </div>
-    <div class = "left-right">
+    
+    <div class = "left-right-farright">
       <div class="input">
         <div class="transactionform">
           Expenditure ($):
@@ -47,8 +49,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       <div class = "right">
         <div class="goal-balance" id="goal">
           <p>Goal Balance: $2000</p>
@@ -69,6 +71,9 @@
             <div class="addorsubtract">
               <button onclick="set_name()">Update</button>
           </div>
+        </div>
+        <div class="graph">
+          <div id="curve_chart"></div>
         </div>
       </div>
 
