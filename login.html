@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <title>login</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="design.css">
-  <script src="finance.js"></script>
-  <body>
-     <div class="login-header">
-        <h1> Welcome to Financial Tracker </h1>
-      </div>
-    <div class="login-screen">
+<title>login</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="design.css">
+<script src="finance.js"></script>
 
-      <div class="user-info">
-          <h>User name:</h>
-          <input class = "input-bar" type="text" id="user-name">
-      </div>
-
-      <div class = "user-info">
-          <h>Password:</h>
-          <input class = "input-bar" type="text" id="pass-word">
-      </div>
-
-      <div class="log-in-button">
-          <button onclick="createacc()">Create Account</button>
-          <button onclick="login()">Log In</button>
-      </div>
-
+<body>
+    <div class="login-header">
+        <div class="brand">
+            <h1>FinTrac</h1>
+        </div>
+        <div class="logo">
+            <img src="fin.png" alt="image of a fin">
+        </div>
     </div>
+    <div class="des-log">
+        <div class="description">
+            <div class="website-goal">Take Control of Your Finances with FinTrack</div>
+            <div class="des">
+                <img src="balance.png" alt="image of a balance">
+                <div class="des-text">
+                    <p>Achieve your Goal Balance</p>
+                </div>
+            </div>
+            <div class="des">
+                <img src="plusminus.png" alt="image of a plus and minus sign">
+                <div class="des-text">
+                    <p>Enter Income and Spending</p>
+                </div>
+            </div>
+            <div class="des">
+                <img src="graph.png" alt="image of a general graph">
+                <div class="des-text">
+                    <p>See Progress on Graph</p>
+                </div>
+            </div>
+        </div>
+        <div class="login-screen">
+            <div class="sign">Sign Up/Log In</div>
+            <div class="user-info">
+                <div class="text-enter">
+                    <h2>User name:</h2>
+                </div>
+                <div class="input-text">
+                    <input class="input-bar" type="text" id="user-name">
+                </div>
+            </div>
 
-      
+            <div class="user-info">
+                <div class="text-enter">
+                    <h2>Password:</h2>
+                </div>
+                <div class="input-text">
+                    <input class="input-bar" type="text" id="pass-word">
+                </div>
+            </div>
 
-  </body>
+            <div class="log-in-button">
+                <button class="buttons-a" onclick="createacc()">Sign Up</button>
+                <button class="buttons-b" onclick="login()">Log In</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
 </html>
