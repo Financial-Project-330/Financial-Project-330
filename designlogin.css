@@ -1,5 +1,9 @@
-/*TRANSACTION PAGE*/
-.header {
+body {
+    background-repeat: no-repeat;
+    background-color: #E5EFF9;
+}
+
+.login-header {
     height: 80px;
     width: 100vw;
     color: #F0F7EE;
@@ -8,143 +12,18 @@
 
 h1 {
     position: relative;
-    top: -55px;
+    top: 8px;
     left: 20vw;
     font-size: 50px;
     font-family: Monaco, Consolas, "Lucida Console", monospace;
     font-weight: 700;
 }
 
-.back-button {
-    position: relative;
-    top: 26px;
-    left: calc(80vw - 30px);
-}
-
 .logo {
     position: relative;
-    top: -154px;
-    left: calc(20vw + 410px);
+    top: -90px;
+    left: calc(20vw + 230px);
 }
-
-body {
-    background-repeat: no-repeat;
-    background-color: #E5EFF9;
-}
-
-.left-right {
-    position: relative;
-    display: inline-grid;
-    top: 5px;
-    left: 100px;
-    padding: 5px;
-    display: flex;
-    grid-template-columns: 300px 500px;
-    grid-template-rows: auto;
-
-}
-
-.input {
-    position: relative;
-    display: inline-grid;
-    top: 20px;
-    grid-template-rows: 200px;
-}
-
-.input-bar {
-    position: relative;
-    width: 100px;
-    height: 15px;
-}
-
-.transactionform {
-    display: inline-grid;
-    grid-template-columns: 300px;
-    grid-template-rows: 25px 25px 100px;
-
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: lightpink;
-
-}
-
-.ok-button {
-    display: inline-grid;
-    grid-template-columns: 150px 150px;
-    grid-template-rows: 30px;
-
-}
-
-.right {
-    position: relative;
-    display: inline-grid;
-    top: 20px;
-    left: 7px;
-    padding: 7px;
-    grid-template-rows: 50px 350px 150px;
-    grid-template-columns: 500px;
-}
-
-.goal-balance {
-    text-align: left;
-    background-color: #99ccff;
-    height: 36px;
-    margin-top: -10px;
-    color: black;
-    background-color: lightpink;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-}
-
-
-.listoftrans {
-    position: relative;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    background-color: lightpink;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-
-}
-
-.icon {
-    position: fixed;
-    left: 37px;
-    top: 800px;
-    position: relative;
-    top: 20px;
-    background-color: #99ccff;
-    font-size: 10px;
-    text-align: right;
-    height: 25px;
-    display: inline-grid;
-    grid-template-columns: 50px 50px 50px 50px 50px;
-    grid-template-rows: 20px;
-}
-
-#total {
-    margin-top: -2px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    background-color: lightpink;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-/*LOG IN PAGE*/
 
 .des-log {
     display: inline-grid;
@@ -209,6 +88,13 @@ h2 {
 
 .input-text {
     margin-top: 10px;
+}
+
+.input-bar {
+    height: 40px;
+    width: calc(30vw - 150px);
+    font-size: 22px;
+    color: #333D39;
 }
 
 .log-in-button {
