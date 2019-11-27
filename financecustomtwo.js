@@ -1,5 +1,12 @@
 var total = -2300;
-var items = [[0,0],[1,400],[2,100],[3,-100],[4,-800],[5,-2300]];
+var items = [
+    [0, 0],
+    [1, 400],
+    [2, 100],
+    [3, -100],
+    [4, -800],
+    [5, -2300]
+];
 var i = 6;
 var smile_reward = '';
 var name = '';
@@ -22,8 +29,8 @@ function subtract() {
     total = total - expenditure;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total;
-    items.push([i,total]);
-  document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
+    items.push([i, total]);
+    document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
     i++;
     drawBasic();
 }
@@ -36,7 +43,7 @@ function add() {
     total = total + income;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total;
-    items.push([i,total]);
+    items.push([i, total]);
     document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
     i++;
     drawBasic();
@@ -118,26 +125,28 @@ function set_name() {
     document.getElementById('nameinput').value = '';
 }
 
-google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.load('current', {
+    packages: ['corechart', 'line']
+});
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
 
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'Transactions');
-  data.addColumn('number', 'Total ($)');
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'Transactions');
+    data.addColumn('number', 'Total ($)');
 
-  data.addRows(items);
+    data.addRows(items);
 
-  var options = {
-    hAxis: {
-      title: 'Transaction'
-    },
-    vAxis: {
-      title: 'Total ($)'
-    },
-  };
+    var options = {
+        hAxis: {
+            title: 'Transaction'
+        },
+        vAxis: {
+            title: 'Total ($)'
+        },
+    };
 
-  var chart = new google.visualization.LineChart(document.getElementById('total-graph'));
-  chart.draw(data, options);
+    var chart = new google.visualization.LineChart(document.getElementById('total-graph'));
+    chart.draw(data, options);
 }
