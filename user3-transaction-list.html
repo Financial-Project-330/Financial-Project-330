@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <title>Transaction List</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="design.css">
-  <script src="finance.js"></script>
-  <body>
-    <div class="head-bar">
-      <div class = "back-button">
-        <a href="login.html">
-          <img src="images/sign-out.svg", width="30", height="30"， alt="Log Out">
-        </a>
-      </div>
-      <h1> Balance </h1>
+<title>Transaction List</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="designcustom.css">
+<script src="financecustomthree.js"></script>
+
+<body>
+    <div class="header">
+        <div class="back-button">
+            <a href="login.html">
+                <img src="images/sign-out.svg" , width="30" , height="30" ， alt="log out">
+            </a>
+        </div>
+        <div class="name">
+          s
+        </div>
+        <div class="brand">
+            <h1>Your Balanace</h1>
+        </div>
+        <div class="logo">
+            <img src="images/fin.png" alt="image of a fin" width="60">
+        </div>
     </div>
-    <div class = "left-right">
-      <div class="input">
-        <div class="transactionform">
-          Expenditure ($):
-          <div class="ok-button">
-            <input class = "input-bar" type="number" id="expenditure" min="0">
-            <div class="addorsubtract">
-              <button onclick="subtract();compare_total_to_goal();">
-                Add Spending
-              </button>
+    <div class="left-right">
+        <div class="input">
+            <div class="transactionform">
+                Expenditure ($):
+                <div class="ok-button">
+                    <input class="input-bar" type="number" id="expenditure" min="0">
+                    <div class="addorsubtract">
+                        <button onclick="subtract();compare();">
+                            Add Spending
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="transactionform">
-          Income ($):
-          <div class="ok-button">
-            <input class = "input-bar" type="number" id="income" min="0">
-            <div class="addorsubtract">
-              <button onclick="add();compare_total_to_goal();">Add Income</button>
+            <div class="transactionform">
+                Income ($):
+                <div class="ok-button">
+                    <input class="input-bar" type="number" id="income" min="0">
+                    <div class="addorsubtract">
+                        <button onclick="add();compare();">Add Income</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="transactionform">
-          Your Goal Balance ($):
-          <div class="ok-button">
-            <input class = "input-bar" type="number" id="goalinput" min="0">
-            <div class="addorsubtract">
-              <button onclick="compare_total_to_goal()">Set Goal</button>
+            <div class="transactionform">
+                Your Goal Balance ($):
+                <div class="ok-button">
+                    <input class="input-bar" type="number" id="goalinput" min="0">
+                    <div class="addorsubtract">
+                        <button onclick="compare_total_to_goal()">Set Goal</button>
+                    </div>
+                </div>
             </div>
-          </div>
+
+        </div>
+        <div class="right">
+            <div class="goal-balance">
+                <p>Goal Balance: </p>
+                <p id="goal">$1,500</p>
+                <p id="goal-met">
+            </div>
+            <div class="listoftrans">
+                List of Transactions:
+              <ul id="items">
+                <li>+$1600</li>
+                <li>-$300</li>
+                <li>+$200</li>
+                <li>+$100</li>
+                <li>-$100</li>
+              </ul>
+            </div>
+            <div id="total">Balance: -$2,300</div>
         </div>
 
-      </div>
-      <div class = "right">
-        <div class="goal-balance" id="goal">
-          <p>Goal Balance: $1000</p>
+        <!-- <div class="profile">
+            <div class="name-bar" id="name">
+                Name:
+            </div>
+            <div class="ok-button">
+                <input class="input-bar" type="text" id="nameinput">
+                <div class="addorsubtract">
+                    <button onclick="set_name()">Update</button>
+                </div>
+            </div>
         </div>
-        <div class="listoftrans">
-          List of Transactions:
-          <ul id="items"></ul>
-        </div>
-        <div id="total">Balance: </div>
-      </div>
-
-      <div class="profile">
-        <div class="name-bar" id="name">
-          Name: Elon Musk
-        </div>
-          <div class="ok-button">
-            <input class="input-bar" type="text" id="nameinput">
-            <div class="addorsubtract">
-              <button onclick="set_name()">Update</button>
-          </div>
-        </div>
-      </div>
-
-<!--       <div class="icon">
+              <div class="icon">
         <i class="material-icons">local_mall</i>
         <i class="material-icons">restaurant</i>
         <i class="material-icons">local_grocery_store</i>
@@ -80,5 +96,8 @@
         <i class="material-icons">hotel</i>
       </div> -->
     </div>
-  </body>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="total-graph"></div>
+</body>
+
 </html>
