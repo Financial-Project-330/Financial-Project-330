@@ -144,6 +144,12 @@ p {
     padding: 10px;
 }
 
+#total-graph {
+  width: 60vw;
+  position: relative;
+  left: 20vw;
+}
+
 /*LOG IN PAGE*/
 
 .des-log {

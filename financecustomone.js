@@ -1,6 +1,6 @@
-var total = 0;
-var items = [[0,0]];
-var i = 1;
+var total = 148;
+var items = [[0,0],[1,-40],[2,260],[3,240],[4,163],[5,148]];
+var i = 6;
 var smile_reward = '';
 var name = '';
 
