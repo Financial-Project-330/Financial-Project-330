@@ -272,3 +272,10 @@ h2 {
   grid-template-columns: 600px;
   grid-template-rows: 400px 400px;
 }
+
+#total-graph {
+    position: relative;
+    top: 50px;
+    left: 20vw;
+    width: 60vw;
+}
