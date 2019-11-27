@@ -2,7 +2,6 @@ var total = 0;
 var items = [[0,0]];
 var i = 1;
 var smile_reward = '';
-var name = '';
 
 function compare() {
     var currentgoal = document.getElementById('goal').innerHTML;
@@ -92,8 +91,6 @@ function login() {
 function createacc() {
     var match = false;
     var un = document.getElementById("user-name").value;
-    var name = un.charAt(0);
-    document.getElementById("name").innerHTML = name;
     var pw = document.getElementById("pass-word").value;
     if (un == '' | pw == '') {
         match = true;
@@ -193,5 +190,3 @@ function drawPieChart() {
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawLineChart);
 google.charts.setOnLoadCallback(drawPieChart);
-
-
