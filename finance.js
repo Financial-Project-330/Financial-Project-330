@@ -2,14 +2,12 @@ var total = 0;
 var items = [[0,0]];
 var i = 1;
 var smile_reward = '';
+var goalgoal = 0;
 
 function compare() {
-    var currentgoal = document.getElementById('goal').innerHTML;
-    currentgoal = Number(currentgoal.substring(1));
-    currentgoal = Math.round(currentgoal * 100) / 100;
-    if (currentgoal != 0 && total >= currentgoal) {
+    if (goalgoal != 0 && total >= goalgoal) {
         document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
-    } else if (currentgoal != 0 && total <= currentgoal) {
+    } else if (goalgoal != 0 && total <= goalgoal) {
         document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
     }
 }
@@ -43,12 +41,12 @@ function add() {
 }
 
 function compare_total_to_goal() {
-    var goal = Number(document.getElementById('goalinput').value);
-    if (goal <= 0) return;
-    goal = Math.round(goal * 100) / 100;
-    document.getElementById('goal').innerHTML = '$' + goal.toLocaleString();
-    if (goal != 0 && total >= goal) document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
-    else if (goal != 0 && total <= goal) {
+    goalgoal = Number(document.getElementById('goalinput').value);
+    if (goalgoal <= 0) return;
+    goalgoal = Math.round(goalgoal * 100) / 100;
+    document.getElementById('goal').innerHTML = '$' + goalgoal.toLocaleString();
+    if (goalgoal != 0 && total >= goalgoal) document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
+    else if (goalgoal != 0 && total <= goalgoal) {
         document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
     }
     document.getElementById('goalinput').value = '';
