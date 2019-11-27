@@ -11,6 +11,7 @@
     position: relative;
     top: -24px;
     left: calc(80vw - 60px);
+    background-color: black
 }
 
 h1 {
