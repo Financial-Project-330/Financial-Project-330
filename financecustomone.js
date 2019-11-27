@@ -13,6 +13,7 @@ var name = '';
 
 function compare() {
     var currentgoal = document.getElementById('goal').innerHTML;
+    currentgoal = Number(currentgoal.substring(1));
     currentgoal = Math.round(currentgoal * 100) / 100;
     if (currentgoal != 0 && total >= currentgoal) {
         document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
