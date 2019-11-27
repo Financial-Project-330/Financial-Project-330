@@ -124,29 +124,3 @@ function set_name() {
     document.getElementById('name').innerHTML = "Name: " + name;
     document.getElementById('nameinput').value = '';
 }
-
-google.charts.load('current', {
-    packages: ['corechart', 'line']
-});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-    var data = new google.visualization.DataTable();
-    data.addColumn('number', 'Transactions');
-    data.addColumn('number', 'Total ($)');
-
-    data.addRows(items);
-
-    var options = {
-        hAxis: {
-            title: 'Transaction'
-        },
-        vAxis: {
-            title: 'Total ($)'
-        },
-    };
-
-    var chart = new google.visualization.LineChart(document.getElementById('total-graph'));
-    chart.draw(data, options);
-}
