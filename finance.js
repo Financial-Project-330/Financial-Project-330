@@ -5,6 +5,7 @@ var smile_reward = '';
 
 function compare() {
     var currentgoal = document.getElementById('goal').innerHTML;
+    currentgoal = Number(currentgoal.substring(1));
     currentgoal = Math.round(currentgoal * 100) / 100;
     if (currentgoal != 0 && total >= currentgoal) {
         document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
@@ -20,7 +21,7 @@ function subtract() {
     expenditure = Math.round(expenditure * 100) / 100;
     total = total - expenditure;
     total = Math.round(total * 100) / 100;
-    document.getElementById('total').innerHTML = 'Balance: $' + total;
+    document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i,total]);
   document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
     i++;
@@ -34,7 +35,7 @@ function add() {
     income = Math.round(income * 100) / 100;
     total = total + income;
     total = Math.round(total * 100) / 100;
-    document.getElementById('total').innerHTML = 'Balance: $' + total;
+    document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i,total]);
     document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
     i++;
