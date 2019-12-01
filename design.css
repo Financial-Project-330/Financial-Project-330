@@ -88,8 +88,8 @@ button:hover {
   padding-top: 10px;
   padding-left: 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 22px;
-    color: #333D39;
+  font-size: 18px;
+  color: #333D39;
   background-color: #F0F7EE;
   position: relative;
   top: 10px;
@@ -101,9 +101,16 @@ button:hover {
 
 .inout-input-bar {
   width: 200px;
-    height: 36px;
+  height: 36px;
   margin-top: 10px;
   font-size: 20px;
+}
+
+.dropdown {
+  width: 200px;
+  height: 36px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 #total-graph {

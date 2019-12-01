@@ -2,12 +2,14 @@ var total = 0;
 var items = [[0,0]];
 var i = 1;
 var smile_reward = '';
-var goalgoal = 0;
 
 function compare() {
-    if (goalgoal != 0 && total >= goalgoal) {
+    var currentgoal = document.getElementById('goal').innerHTML;
+    currentgoal = Number(currentgoal.substring(1));
+    currentgoal = Math.round(currentgoal * 100) / 100;
+    if (currentgoal != 0 && total >= currentgoal) {
         document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
-    } else if (goalgoal != 0 && total <= goalgoal) {
+    } else if (currentgoal != 0 && total <= currentgoal) {
         document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
     }
 }
@@ -21,7 +23,14 @@ function subtract() {
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i,total]);
-  document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
+    var category = document.getElementById("expendituredropdown").value;
+    //categories.push(category);
+    if (category == "Select Category...") {
+      category ='';
+      document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString()+ '</li>';
+    }
+    else document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + ' (' + category + ')' + '</li>';
+    document.getElementById('expendituredropdown').value = "Select Category..."
     i++;
     drawBasic();
 }
@@ -35,18 +44,25 @@ function add() {
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i,total]);
-    document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
+    var category = document.getElementById("incomedropdown").value;
+    //categories.push(category);
+    if (category == "Select Category...") {
+      category ='';
+      document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString()+ '</li>';
+    }
+    else document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + ' (' + category + ')' + '</li>';
+    document.getElementById('incomedropdown').value = "Select Category..."
     i++;
     drawBasic();
 }
 
 function compare_total_to_goal() {
-    goalgoal = Number(document.getElementById('goalinput').value);
-    if (goalgoal <= 0) return;
-    goalgoal = Math.round(goalgoal * 100) / 100;
-    document.getElementById('goal').innerHTML = '$' + goalgoal.toLocaleString();
-    if (goalgoal != 0 && total >= goalgoal) document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
-    else if (goalgoal != 0 && total <= goalgoal) {
+    var goal = Number(document.getElementById('goalinput').value);
+    if (goal <= 0) return;
+    goal = Math.round(goal * 100) / 100;
+    document.getElementById('goal').innerHTML = '$' + goal.toLocaleString();
+    if (goal != 0 && total >= goal) document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
+    else if (goal != 0 && total <= goal) {
         document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
     }
     document.getElementById('goalinput').value = '';
