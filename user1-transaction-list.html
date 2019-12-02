@@ -37,64 +37,74 @@
 </head>
 
 <body>
-  <div class="header">
-    <div class="back-button">
-      <a href="login.html">
-        <img src="images/sign-out.svg" , width="30" , height="30" ， alt="log out">
-      </a>
-    </div>
-    <div class="name">
-      s
-    </div>
-    <div class="brand">
-      <h1>Your Balance</h1>
-    </div>
-    <div class="logo">
-      <img src="images/fin.png" alt="image of a fin" width="60">
-    </div>
-  </div>
-  <div class="left-right">
-    <div class="input">
-      <div class="transactionform">
-        Expenditure ($):
-        <div class="ok-button">
-          <input class="input-bar" type="number" id="expenditure" min="0">
-          <div class="addorsubtract">
-            <button onclick="subtract();compare();">
-              Add Spending
-            </button>
-          </div>
+    <div class="header">
+        <div class="back-button">
+            <a href="login.html">
+                <img src="images/sign-out.svg" width="30" height="30" alt="log out">
+            </a>
         </div>
-      </div>
-
-      <div class="transactionform">
-        Income ($):
-        <div class="ok-button">
-          <input class="input-bar" type="number" id="income" min="0">
-          <div class="addorsubtract">
-            <button onclick="add();compare();">Add Income</button>
-          </div>
+        <div class="name">
+        sky
         </div>
-      </div>
-
-      <div class="transactionform">
-        Your Goal Balance ($):
-        <div class="ok-button">
-          <input class="input-bar" type="number" id="goalinput" min="0">
-          <div class="addorsubtract">
-            <button onclick="compare_total_to_goal()">Set Goal</button>
-          </div>
+        <div class="brand">
+            <h1>Your Balance</h1>
         </div>
-      </div>
-
+        <div class="logo">
+            <img src="images/fin.png" alt="image of a fin" width="60">
+        </div>
     </div>
-    <div class="right">
-      <div class="goal-balance">
-        <p>Goal Balance: </p>
-        <p id="goal"></p>
-        <p id="goal-met"></p>
-      </div>
-      <div class="listoftrans">
+    <div class="currentbalance-container">
+        <div id="total">Balance: $148</div>
+        <div id="goal-met"></div>
+    </div>
+    <div class="goal-container">
+        <div class="goal-balance">Goal Balance: </div>
+        <div id="goal"></div>
+        <input class="input-bar" type="number" id="goalinput" min="0">
+        <button id="setgbutton" onclick="compare_total_to_goal()">Change Goal</button>
+    </div>
+    <div class="form-container">
+        <div class="inout-form-container">
+            <div class="in-out">Expenditure ($): </div>
+            <input class="inout-input-bar" type="number" id="expenditure" min="0">
+        </div>
+        <div class="inout-form-container">
+            <div class="in-out">Income ($): </div>
+            <input class="inout-input-bar" type="number" id="income" min="0">
+        </div>
+        <!-- new -->
+        <select class="dropdown" id="expendituredropdown">
+          <option value="Select Category..."> Select Category... </option>
+          <option value="Bills"> Bills </option>
+          <option value="Dining"> Dining </option>
+          <option value="Education"> Education </option>
+          <option value="Entertainment"> Entertainment </option>
+          <option value="General"> Groceries </option>
+          <option value="Gifts"> Gifts </option>
+          <option value="Groceries"> General </option>
+          <option value=Healthcare> Healthcare </option>
+          <option value="Housing"> Housing </option>
+          <option value="Sports/Recreation"> Sports/Recreation </option>
+          <option value="Taxes/Fees"> Taxes/Fees </option>
+          <option value="Transportation"> Transportation </option>
+          <option value="Vacation"> Vacation </option>
+          <option value="Other"> Other </option>
+        </select>
+        <select class="dropdown" id="incomedropdown">
+          <option value="Select Category..."> Select Category... </option>
+          <option value="Gift"> Gift </option>
+          <option value="Investment">Investment </option>
+          <option value="Paycheck"> Paycheck </option>
+          <option value="Reimbursement"> Reimbursement </option>
+          <option value="Other"> Other </option>
+        </select>
+
+        <!-- new -->
+        <button onclick="subtract();compare();">Add Spending</button>
+        <button onclick="add();compare();">Add Income</button>
+    </div>
+    <div id="total-graph"></div>
+    <div class="listoftrans">
         List of Transactions:
         <ul id="items">
           <li>-$40</li>
@@ -103,12 +113,8 @@
           <li>-$77</li>
           <li>-$15</li>
         </ul>
-      </div>
-      <div id="total">Balance: $148</div>
     </div>
-
-  </div>
-  <div id="total-graph"></div>
+    
 </body>
 
 </html>
