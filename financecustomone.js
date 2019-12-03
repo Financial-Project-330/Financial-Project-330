@@ -1,11 +1,11 @@
 var total = 148;
 var items = [
-    [0, 0],
-    [1, -40],
-    [2, 260],
-    [3, 240],
-    [4, 163],
-    [5, 148]
+    [0, 0, 0],
+    [1, -40, 0],
+    [2, 260, 0],
+    [3, 240, 0],
+    [4, 163, 0],
+    [5, 148, 0]
 ];
 var i = 6;
 var smile_reward = '';
@@ -28,7 +28,7 @@ function subtract() {
     total = total - expenditure;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
-    items.push([i, total]);
+    items.push([i, total, goalgoal]);
     document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
     i++;
     drawBasic();
@@ -42,7 +42,7 @@ function add() {
     total = total + income;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
-    items.push([i, total]);
+    items.push([i, total, goalgoal]);
     document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
     i++;
     drawBasic();
