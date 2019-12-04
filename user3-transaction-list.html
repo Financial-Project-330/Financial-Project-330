@@ -18,6 +18,7 @@
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'Transactions');
     data.addColumn('number', 'Total ($)');
+    data.addColumn('number', 'Goal Balance'); //new
 
     data.addRows(items);
 
@@ -97,7 +98,7 @@
           <option value="Reimbursement"> Reimbursement </option>
           <option value="Other"> Other </option>
         </select>
-        
+
         <button onclick="subtract();compare();">Add Spending</button>
         <button onclick="add();compare();">Add Income</button>
     </div>

@@ -1,5 +1,7 @@
 var total = 0;
-var items = [[0,0]];
+var goalbalance = 0;
+//var items = [[0,0]];
+var items = [[0,0,0]]; //new
 var i = 1;
 var smile_reward = '';
 
@@ -22,7 +24,8 @@ function subtract() {
     total = total - expenditure;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
-    items.push([i,total]);
+    //items.push([i,total]);
+    items.push([i,total,goalbalance]); //new
     var category = document.getElementById("expendituredropdown").value;
     //categories.push(category);
     if (category == "Select Category...") {
@@ -43,7 +46,9 @@ function add() {
     total = total + income;
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
-    items.push([i,total]);
+    var goal = Number(document.getElementById('goalinput').value); //new
+    //items.push([i,total]);
+    items.push([i,total,goalbalance]); //new
     var category = document.getElementById("incomedropdown").value;
     //categories.push(category);
     if (category == "Select Category...") {
@@ -58,6 +63,7 @@ function add() {
 
 function compare_total_to_goal() {
     var goal = Number(document.getElementById('goalinput').value);
+    goalbalance = goal; //new
     if (goal <= 0) return;
     goal = Math.round(goal * 100) / 100;
     document.getElementById('goal').innerHTML = '$' + goal.toLocaleString();
