@@ -16,7 +16,8 @@ function compare() {
     if (goalgoal != 0 && total >= goalgoal) {
         document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
     } else if (goalgoal != 0 && total <= goalgoal) {
-        document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
+        var difference = goalgoal - total;
+        document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;' + ' by $' + difference.toLocaleString();
     }
 }
 
@@ -55,9 +56,12 @@ function compare_total_to_goal() {
     document.getElementById('goal').innerHTML = '$' + goalgoal.toLocaleString();
     if (goalgoal != 0 && total >= goalgoal) document.getElementById('goal-met').innerHTML = 'Goal reached ' + '&#128513;';
     else if (goalgoal != 0 && total <= goalgoal) {
-        document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;';
+      var difference = goalgoal - total;
+      document.getElementById('goal-met').innerHTML = 'Below Goal ' + '&#128546;' + ' by $' + difference.toLocaleString();
     }
     document.getElementById('goalinput').value = '';
+    items.push([i-1,total,goalgoal]);
+    drawBasic();
 }
 
 
