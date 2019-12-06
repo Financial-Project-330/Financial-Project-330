@@ -30,7 +30,14 @@ function subtract() {
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i, total, goalgoal]);
-    document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
+    //document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + '</li>';
+    var category = document.getElementById('expendituredropdown').value;
+    if (category == "Select Category...") {
+      category ='';
+      document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString()+ '</li>';
+    }
+    else document.getElementById('items').innerHTML += '<li>' + '-$' + expenditure.toLocaleString() + ' (' + category + ')' + '</li>';
+    document.getElementById('expendituredropdown').value = "Select Category..."
     i++;
     drawBasic();
 }
@@ -44,7 +51,14 @@ function add() {
     total = Math.round(total * 100) / 100;
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     items.push([i, total, goalgoal]);
-    document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
+    var category = document.getElementById("incomedropdown").value;
+    if (category == "Select Category...") {
+      category ='';
+      document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString()+ '</li>';
+    }
+    else document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + ' (' + category + ')' + '</li>';
+    document.getElementById('incomedropdown').value = "Select Category..."
+    //document.getElementById('items').innerHTML += '<li>' + '+$' + income.toLocaleString() + '</li>';
     i++;
     drawBasic();
 }
