@@ -26,7 +26,7 @@ function subtract() {
     document.getElementById('total').innerHTML = 'Balance: $' + total.toLocaleString();
     //items.push([i,total]);
     items.push([i,total,goalbalance]); //new
-    var category = document.getElementById("expendituredropdown").value;
+    var category = document.getElementById('expendituredropdown').value;
     //categories.push(category);
     if (category == "Select Category...") {
       category ='';
